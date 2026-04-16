@@ -1,22 +1,38 @@
 <html>
 <head>
+    <title>FOC - Apollonius</title>
     <style>
-        .fullscreen {width: 100%}
+        .fit-to-screen {
+            max-width: 100vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .original-size {
+            /* no constraints — natural image size */
+        }
+        iframe.fit-to-screen {
+            width: 100%;
+            height: 90vh;
+        }
+        iframe.original-size {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <div id="app">
     <div>
+        <button @click="fitToScreen = !fitToScreen">{{ fitToScreen ? 'Original size' : 'Fit to screen' }}</button>
         <button @click="previousImage" :disabled="currentImage === 0">Previous</button>
         <button @click="nextImage" :disabled="currentImage === images.length - 1">Next</button>
         {{ currentImage + 1 }} of {{ images.length}}
     </div>
     <div v-if="images[currentImage].substring(0,6)!=='https:'">
-        <img class="fullscreen" :src="images[currentImage]"><br/>
+        <img :alt="images[currentImage].split('/').pop().split('.')[0]" :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage]"><br/>
     </div>
     <div v-if="images[currentImage].substring(0,6)==='https:'">
-        <iframe class="fullscreen" :src="images[currentImage]" height="90%">Page not found</iframe>
+        <iframe :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage]" height="90%">Page not found</iframe>
     </div>
 
 </div>
@@ -31,6 +47,7 @@
                 "slides/PilotBoatDebug.png",
                 "slides/AandBEuclid.jpeg",
                  ];
+            const fitToScreen = ref(true);
             const search = Number(location.search.substring(1));
             function setSearch() {
                 if (currentImage.value) {
@@ -51,6 +68,7 @@
             return {
                 images,
                 currentImage,
+                fitToScreen,
                 nextImage,
                 previousImage
             }
