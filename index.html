@@ -24,15 +24,17 @@
 <div id="app">
     <div>
         <button @click="fitToScreen = !fitToScreen">{{ fitToScreen ? 'Original size' : 'Fit to screen' }}</button>
+        <button @click="firstImage">|&lt;</button>
         <button @click="previousImage" :disabled="currentImage === 0">Previous</button>
         <button @click="nextImage" :disabled="currentImage === images.length - 1">Next</button>
+        <button @click="lastImage">&gt;|</button>
         {{ currentImage + 1 }} of {{ images.length}}
     </div>
-    <div v-if="images[currentImage].substring(0,6)!=='https:'">
+    <div v-if="images[currentImage].substring(0,1)!=='@'">
         <img :alt="images[currentImage].split('/').pop().split('.')[0]" :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage]"><br/>
     </div>
-    <div v-if="images[currentImage].substring(0,6)==='https:'">
-        <iframe :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage]" height="90%">Page not found</iframe>
+    <div v-else>
+        <iframe :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage].substring(1)" height="90%">Page not found</iframe>
     </div>
 
 </div>
@@ -42,10 +44,20 @@
     createApp({
         setup() {
             const images = [
+                "@https://rarehistoricalphotos.com/life-before-autocad-1950-1980/",
                 "slides/ApoManualCover.png",
                 "slides/ApoToolSprites.png",
                 "slides/PilotBoatDebug.png",
                 "slides/AandBEuclid.jpeg",
+                "@https://www.computinghistory.org.uk/det/816/Personal-Computer-World-November-1988/",
+                "@slides/AcornNews_PCShowNewsletter89.pdf",
+                "slides/AdjustableSetSquare.jpg",
+                "@slides/APP155 (1st ed) - (1988)-opt.pdf",
+                "slides/MiniMap.png",
+                "slides/PilotBoat.png",
+                "slides/Piston.png",
+                "slides/QCAD.png",
+                "slides/AutoCAD.png",
                  ];
             const fitToScreen = ref(true);
             const search = Number(location.search.substring(1));
@@ -57,20 +69,30 @@
                 }
             }
             const currentImage = ref(search ? search -1 : search);
-            function nextImage() {
-                currentImage.value += 1;
+            function firstImage() {
+                currentImage.value = 0;
                 setSearch();
             }
             function previousImage() {
                 currentImage.value -= 1;
                 setSearch();
             }
+            function nextImage() {
+                currentImage.value += 1;
+                setSearch();
+            }
+            function lastImage() {
+                currentImage.value = images.length - 1;
+                setSearch();
+            }
             return {
                 images,
                 currentImage,
                 fitToScreen,
+                firstImage,
+                previousImage,
                 nextImage,
-                previousImage
+                lastImage,
             }
         }
     }).mount("#app");
