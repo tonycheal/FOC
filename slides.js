@@ -1,9 +1,23 @@
 window.SLIDES = [
+    "@https://tonycheal.com/",
+    "slides/ICL OPD.jpg",
+    "@https://binarydinosaurs.co.uk/Museum/icl/opdcompiler.php",
+    "@https://en.wikipedia.org/wiki/Acorn_Archimedes",
+    "slides/AandBEuclid.jpeg",
+    "@https://web.archive.org/web/19961221034257/http://www.oakltd.demon.co.uk/",
     "@https://rarehistoricalphotos.com/life-before-autocad-1950-1980/",
+    "slides/AutoCAD.png",
+    "slides/QCAD.png",
+    "slides/LDCAPI1.jpeg",
+    "slides/LDCAPI2.jpeg",
+    "slides/RealAdjustableSetSquare.jpeg",
+    "@https://en.wikipedia.org/wiki/Apollonius_of_Perga",
+    "@https://www.cut-the-knot.org/pythagoras/Apollonius.shtml",
+
+    "slides/Euclid21990.jpg",
     "slides/ApoManualCover.png",
     "slides/ApoToolSprites.png",
     "slides/PilotBoatDebug.png",
-    "slides/AandBEuclid.jpeg",
     "@https://www.computinghistory.org.uk/det/816/Personal-Computer-World-November-1988/",
     "@slides/AcornNews_PCShowNewsletter89.pdf",
     "slides/AdjustableSetSquare.jpg",
@@ -13,4 +27,6 @@ window.SLIDES = [
     "slides/Piston.png",
     "slides/QCAD.png",
     "slides/AutoCAD.png",
+    "@https://apollonius.design/",
+    "slides/ArchimedesLive.png"
 ];

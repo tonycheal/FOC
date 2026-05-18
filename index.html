@@ -23,21 +23,26 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="slides.js"></script>
 <div id="app">
-    <div>
-        <button @click="fitToScreen = !fitToScreen">{{ fitToScreen ? 'Original size' : 'Fit to screen' }}</button>
-        <button @click="firstImage">|&lt;</button>
-        <button @click="previousImage" :disabled="currentImage === 0">Previous</button>
-        <button @click="nextImage" :disabled="currentImage === images.length - 1">Next</button>
-        <button @click="lastImage">&gt;|</button>
-        {{ currentImage + 1 }} of {{ images.length}}
+    <div style="display:flex;justify-content: space-between;;position:sticky;top:0;background-color:white;">
+        <div>
+            <button @click="fitToScreen = !fitToScreen">{{ fitToScreen ? 'Original size' : 'Fit to screen' }}</button>
+            <button @click="previousImage" :disabled="currentImage === 0">Previous</button>
+            <button @click="nextImage" :disabled="currentImage === images.length - 1">Next</button>
+            {{ currentImage + 1 }} of {{ images.length}}
+        </div>
+        <div>
+            <button @click="firstImage">|&lt;</button>
+            <button @click="lastImage">&gt;|</button>
+        </div>
     </div>
-    <div v-if="images[currentImage].substring(0,1)!=='@'">
-        <img :alt="images[currentImage].split('/').pop().split('.')[0]" :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage]"><br/>
+    <div style="width:100%;overflow:scroll">
+        <div v-if="images[currentImage].substring(0,1)!=='@'">
+            <img :alt="images[currentImage].split('/').pop().split('.')[0]" :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage]"><br/>
+        </div>
+        <div v-else>
+            <iframe :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage].substring(1)" height="90%">Page not found</iframe>
+        </div>
     </div>
-    <div v-else>
-        <iframe :class="fitToScreen ? 'fit-to-screen' : 'original-size'" :src="images[currentImage].substring(1)" height="90%">Page not found</iframe>
-    </div>
-
 </div>
 <script>
     const {createApp, ref} = Vue;
