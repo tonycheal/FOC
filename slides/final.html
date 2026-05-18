@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Thanks!</title>
+    <style>
+        :root {
+            --bg: #f5efe1;
+            --ink: #2a2a2a;
+            --accent: #b85c2f;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: Georgia, "Times New Roman", serif;
+            height: 100%;
+        }
+        .slide {
+            min-height: 100vh;
+            box-sizing: border-box;
+            padding: 6vh 6vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        header h1 {
+            margin: 0;
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            font-weight: normal;
+            letter-spacing: -0.02em;
+        }
+        header p {
+            margin: 0.4em 0 0 0;
+            font-size: clamp(1rem, 1.8vw, 1.6rem);
+            color: #6b5f4a;
+            font-style: italic;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: clamp(2rem, 6vw, 6rem);
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .qr-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.75rem;
+        }
+        .qr-block .label {
+            font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+        }
+        .qr-block .qr {
+            background: #fff;
+            padding: 12px;
+            border: 1px solid #d9cfb8;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+            width: clamp(180px, 22vw, 320px);
+            height: clamp(180px, 22vw, 320px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .qr-block .qr img,
+        .qr-block .qr canvas {
+            width: 100% !important;
+            height: 100% !important;
+            image-rendering: pixelated;
+        }
+        .qr-block .url {
+            font-family: "SF Mono", Menlo, Consolas, monospace;
+            font-size: clamp(0.95rem, 1.4vw, 1.3rem);
+            color: var(--ink);
+            word-break: break-all;
+            max-width: 22vw;
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: clamp(0.85rem, 1.1vw, 1rem);
+            color: #6b5f4a;
+        }
+        footer .thanks {
+            font-style: italic;
+        }
+        footer .meta {
+            text-align: right;
+        }
+        .rule {
+            border: 0;
+            border-top: 1px solid #d9cfb8;
+            margin: 0 0 2vh 0;
+        }
+    </style>
+</head>
+<body>
+<div class="slide">
+    <header>
+        <h1>Thank you.</h1>
+        <p>Apollonius &mdash; a CAD tool that remembers where it came from.</p>
+    </header>
+
+    <section class="links">
+        <div class="qr-block">
+            <div class="label">The project</div>
+            <div class="qr" data-qr="https://apollonius.design"></div>
+            <div class="url">apollonius.design</div>
+        </div>
+        <div class="qr-block">
+            <div class="label">The speaker</div>
+            <div class="qr" data-qr="https://tonycheal.com"></div>
+            <div class="url">tonycheal.com</div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <hr class="rule">
+            <div class="thanks">Questions &amp; (gentle) heckling welcome.</div>
+        </div>
+        <div class="meta">
+            <hr class="rule">
+            Tony Cheal &middot; Future of Coding London &middot; 2026
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+    document.querySelectorAll('.qr[data-qr]').forEach(el => {
+        new QRCode(el, {
+            text: el.getAttribute('data-qr'),
+            width: 600,
+            height: 600,
+            colorDark: '#2a2a2a',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+        });
+    });
+</script>
+</body>
+</html>

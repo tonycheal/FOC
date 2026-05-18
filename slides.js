@@ -13,9 +13,10 @@ window.SLIDES = [
     "slides/RealAdjustableSetSquare.jpeg",
     "@https://en.wikipedia.org/wiki/Apollonius_of_Perga",
     "@https://www.cut-the-knot.org/pythagoras/Apollonius.shtml",
-
+    "@https://apollonius.design/",
+    "@slides/final.html",
+    // spares if required....
     "slides/Euclid21990.jpg",
-    "slides/ApoManualCover.png",
     "slides/ApoToolSprites.png",
     "slides/PilotBoatDebug.png",
     "@https://www.computinghistory.org.uk/det/816/Personal-Computer-World-November-1988/",
@@ -27,6 +28,5 @@ window.SLIDES = [
     "slides/Piston.png",
     "slides/QCAD.png",
     "slides/AutoCAD.png",
-    "@https://apollonius.design/",
-    "slides/ArchimedesLive.png"
+    "slides/ArchimedesLive.png",
 ];
