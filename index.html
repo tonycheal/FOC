@@ -17,9 +17,22 @@
         iframe.original-size {
             width: 100%;
         }
-        @media (max-width: 450px) {
+        /*
+         * Touch devices (phones, tablets) — make tap targets finger-sized.
+         * `pointer: coarse` is the modern way to ask "is the primary input
+         * a fingertip?", and it works regardless of layout viewport width.
+         * We keep the desktop-style 980px layout so slide content still
+         * scales down to fit — only the buttons are scaled up.
+         *
+         * Sizes are deliberately large in CSS px: iOS shrinks the 980px
+         * layout to fit the ~393px physical screen (~2.5x), so a 60px
+         * font-size in CSS ends up at ~24px on the glass.
+         */
+        @media (pointer: coarse) {
             button {
-                font-size: 400%;
+                font-size: 60px;
+                padding: 20px 28px;
+                margin: 4px;
             }
         }
     </style>
