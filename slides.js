@@ -15,7 +15,6 @@ window.SLIDES = [
     "slides/QCAD.png",
     "@https://en.wikipedia.org/wiki/Apollonius_of_Perga",
     "@https://www.cut-the-knot.org/pythagoras/Apollonius.shtml",
-    "@https://en.wikipedia.org/wiki/Problem_of_Apollonius#Ten_combinations_of_points,_circles,_and_lines",
     "@https://apollonius.design/",
     "@slides/final.html",
     // spares if required....
@@ -31,4 +30,5 @@ window.SLIDES = [
     "slides/AdjustableSetSquare.jpg",
     "@slides/APP155 (1st ed) - (1988)-opt.pdf",
     "slides/MiniMap.png",
+    "@https://en.wikipedia.org/wiki/Problem_of_Apollonius#Ten_combinations_of_points,_circles,_and_lines",
 ];
