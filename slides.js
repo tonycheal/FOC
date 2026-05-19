@@ -15,6 +15,7 @@ window.SLIDES = [
     "slides/QCAD.png",
     "@https://en.wikipedia.org/wiki/Apollonius_of_Perga",
     "@https://www.cut-the-knot.org/pythagoras/Apollonius.shtml",
+    "slides/NotesPage.jpeg",
     "@https://apollonius.design/",
     "@slides/final.html",
     // spares if required....
