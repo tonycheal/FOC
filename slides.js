@@ -21,6 +21,7 @@ window.SLIDES = [
     // spares if required....
     "slides/Piston.png",
     "slides/PilotBoat.png",
+    "slides/ArchimedesLive.png",
     "slides/ApoManualCover.png",
     "slides/ApoToolSprites.png",
     "slides/Euclid21990.jpg",
@@ -30,5 +31,4 @@ window.SLIDES = [
     "slides/AdjustableSetSquare.jpg",
     "@slides/APP155 (1st ed) - (1988)-opt.pdf",
     "slides/MiniMap.png",
-    "slides/ArchimedesLive.png",
 ];

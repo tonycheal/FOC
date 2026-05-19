@@ -60,7 +60,7 @@ const html = `<!doctype html>
 <p>Generated from <a href="../slides.js">slides.js</a> by <code>build-slides-index.mjs</code>.</p>
 ${entries.join('\n')}
 </body>
-</htmllang>
+</html>
 `;
 
 writeFileSync(join(root, 'slides', 'index.html'), html);
