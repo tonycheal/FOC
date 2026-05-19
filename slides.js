@@ -21,15 +21,14 @@ window.SLIDES = [
     // spares if required....
     "slides/Piston.png",
     "slides/PilotBoat.png",
-    "slides/Euclid21990.jpg",
+    "slides/ApoManualCover.png",
     "slides/ApoToolSprites.png",
+    "slides/Euclid21990.jpg",
     "slides/PilotBoatDebug.png",
     "@https://www.computinghistory.org.uk/det/816/Personal-Computer-World-November-1988/",
     "@slides/AcornNews_PCShowNewsletter89.pdf",
     "slides/AdjustableSetSquare.jpg",
     "@slides/APP155 (1st ed) - (1988)-opt.pdf",
     "slides/MiniMap.png",
-    "slides/QCAD.png",
-    "slides/AutoCAD.png",
     "slides/ArchimedesLive.png",
 ];
